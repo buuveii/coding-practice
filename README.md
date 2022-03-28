@@ -64,6 +64,20 @@ Main uses of trees include maintaining hierarchical data, providing moderate acc
 
 # def splay_tree:
 
+# inorder_traversal:
+    left -> root -> right
+
+# preorder_traversal:
+    root -> left -> right
+
+# postorder_traversal:
+    left -> right -> root
+
+
+
 
 # URL:
-https://www.geeksforgeeks.org/binary-tree-set-3-types-of-binary-tree/?ref=lbp
+- https://www.geeksforgeeks.org/binary-tree-set-3-types-of-binary-tree/?ref=lbp
+traversals:
+- https://www.tutorialspoint.com/python_data_structure/python_tree_traversal_algorithms.htm#:~:text=Finally%20the%20Inorder%20traversal%20logic,all%20the%20nodes%20are%20traversed.
+
