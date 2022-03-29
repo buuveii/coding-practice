@@ -58,11 +58,23 @@ Main uses of trees include maintaining hierarchical data, providing moderate acc
            /       \  
          15         30  
 
+balanced_binary_tree:
+    - the height of the left and right subtree of any node differ by not more than 1
+
 # def AVL_tree:
+    - self-balancing binary search tree in which each node maintains extra information called balance factor whose value is either -1, 0 or 1
+    - balance factor = height of left subtree - height of right subtree
 
 # def_red_black_tree:
+    - self-balancing binary search tree in which each node contains an extra bit for denoting the color of the node, either red or black.
+    - every node is colored (red or black)
+    - root is black
+    - every leaf is black
+    - if a red node has children, children are always black
+    - for each node, any path from this and to any of its leaf has the same number of black nodes
 
 # def splay_tree:
+    - the main idea of splay tree is to bring the recently accessed items to root of the tree 
 
 # inorder_traversal:
     left -> root -> right
@@ -78,6 +90,8 @@ Main uses of trees include maintaining hierarchical data, providing moderate acc
 
 # URL:
 - https://www.geeksforgeeks.org/binary-tree-set-3-types-of-binary-tree/?ref=lbp
-traversals:
+# traversals:
 - https://www.tutorialspoint.com/python_data_structure/python_tree_traversal_algorithms.htm#:~:text=Finally%20the%20Inorder%20traversal%20logic,all%20the%20nodes%20are%20traversed.
+# AVL tree
+- https://www.programiz.com/dsa/avl-tree
 
