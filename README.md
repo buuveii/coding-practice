@@ -90,7 +90,7 @@ balanced_binary_tree:
 
 # URL:
 - https://www.geeksforgeeks.org/binary-tree-set-3-types-of-binary-tree/?ref=lbp
-# traversals:
+### traversals
 - https://www.tutorialspoint.com/python_data_structure/python_tree_traversal_algorithms.htm#:~:text=Finally%20the%20Inorder%20traversal%20logic,all%20the%20nodes%20are%20traversed.
 # AVL tree
 - https://www.programiz.com/dsa/avl-tree
