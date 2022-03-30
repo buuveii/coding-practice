@@ -33,7 +33,7 @@ Main uses of trees include maintaining hierarchical data, providing moderate acc
      /  \   /
     8   7  9 
 
-# def full_binary_tree:
+### full_binary_tree
     - every node has 0 or 2 children (all the nodes except leaf nodes have 2 children)
     - examples:
              18
