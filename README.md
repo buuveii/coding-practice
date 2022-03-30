@@ -8,7 +8,7 @@ Main uses of trees include maintaining hierarchical data, providing moderate acc
     - maximum number of nodes at level l is 2**l (level of the root is 0)
     - maximum number of nodes in a binary tree of height h is 2**h - 1 
 
-# def binary_search_tree:
+### binary_search_tree
     - the left subtree of a node contains only nodes with keys less than the node's key  
     - the right subtree of a node contains only nodes with keys greater than the node's key 
     - the left and right subtree must be a binary search tree
