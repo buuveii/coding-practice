@@ -3,7 +3,7 @@ This is a Tree
 Trees are hierarchical data structures.
 Main uses of trees include maintaining hierarchical data, providing moderate access and insert/delete operations.
 
-# def binary_tree:
+### binary_tree
     - a tree whose elements have at most 2 children (usually named left children and right children)
     - maximum number of nodes at level l is 2**l (level of the root is 0)
     - maximum number of nodes in a binary tree of height h is 2**h - 1 
