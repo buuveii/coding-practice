@@ -14,7 +14,7 @@ Main uses of trees include maintaining hierarchical data, providing moderate acc
     - the left and right subtree must be a binary search tree
     - no duplicate nodes
 
-# def complete_binary_tree:
+### complete_binary_tree
     - all the levels are completely filled except the last level
     - last level has all keys as left as possible
     - examples: (binary heap)
