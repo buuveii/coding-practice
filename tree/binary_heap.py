@@ -1,23 +1,35 @@
-from heapq import heapify, heappush, heappop
-
 class MinHeap:
     def __init__(self):
-        self.heap = []
+        self.heap = [0]
+        self.cur_size = 0
 
     def parent(self, i):
-        return (i-1)/2
+        return int((i-1)/2)
+
+    def left_child(self, i):
+        return 2*i+1
+
+    def right_child(self, i):
+        return 2*i+2
+
+    def move_up(self, i):
+        while self.parent(i) > 0:
+            if self.heap[i] < self.heap[self.parent(i)]:
+                self.heap[i], self.heap[self.parent(i)] = self.heap[self.parent(i)], self.heap[i]
+
+            i = self.parent(i)
 
     def insertKey(self, key):
-        heappush(self.heap, key)
+        self.heap.append(key)
+        self.cur_size += 1
+        self.move_up(self.cur_size)
 
-    def extractMin(self):
-        return heappop(self.heap)
-
+    #def extractMin(self):
+        
     def getMin(self):
         return self.heap[0]
 
-def min_heapify(list):
-        return heapify(list)
+    #def min_heapify(self, i):
 
 def main():
     heapObj = MinHeap()
@@ -27,13 +39,10 @@ def main():
     heapObj.insertKey(5)
     heapObj.insertKey(4)
     heapObj.insertKey(45)
-    list = [3, 9, 8, 1, 3, 5]
   
-    print(heapObj.extractMin())
+    #print(heapObj.extractMin())
     print(heapObj.getMin())
     print(heapObj.heap)
-    min_heapify(list)
-    print(list)
 
 if __name__ == '__main__':
     main()
