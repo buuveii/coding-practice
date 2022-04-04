@@ -1,7 +1,7 @@
 class MinHeap:
     def __init__(self):
-        self.heap = [0]
-        self.cur_size = 0
+        #self.cur_size = -1
+        self.heap = []
 
     def parent(self, i):
         return int((i-1)/2)
@@ -12,24 +12,50 @@ class MinHeap:
     def right_child(self, i):
         return 2*i+2
 
-    def move_up(self, i):
-        while self.parent(i) > 0:
-            if self.heap[i] < self.heap[self.parent(i)]:
-                self.heap[i], self.heap[self.parent(i)] = self.heap[self.parent(i)], self.heap[i]
-
-            i = self.parent(i)
-
     def insertKey(self, key):
+        
         self.heap.append(key)
-        self.cur_size += 1
-        self.move_up(self.cur_size)
+        #self.cur_size += 1
+        
+        current = len(self.heap) - 1
 
-    #def extractMin(self):
+        while self.heap[current] < self.heap[self.parent(current)]:
+            self.heap[current], self.heap[self.parent(current)] = self.heap[self.parent(current)], self.heap[current]
+            current = self.parent(current)
+
+    def isLeaf(self, i):
+        return self.left_child(i) > len(self.heap) - 1
+
+    def min_heapify(self, i):
+        if not self.isLeaf(i):
+            if self.right_child(i) > len(self.heap) - 1: #baruun children bhgu bol
+                if self.heap[i] > self.heap[self.left_child(i)]:
+                    self.heap[i], self.heap[self.left_child(i)] = self.heap[self.left_child(i)], self.heap[i]
+
+            else:
+                if self.heap[i] > self.heap[self.left_child(i)] or self.heap[i] > self.heap[self.right_child(i)]:
+
+                    if self.heap[self.left_child(i)] < self.heap[self.right_child(i)]:
+                        self.heap[i], self.heap[self.left_child(i)] = self.heap[self.left_child(i)], self.heap[i]
+                        self.min_heapify(self.left_child(i))
+                
+                    else:
+                        self.heap[i], self.heap[self.right_child(i)] = self.heap[self.right_child(i)], self.heap[i]
+                        self.min_heapify(self.right_child(i))
+
+    def build_minHeap(self):
+        for i in range(self.parent(len(self.heap)-1), 0, -1):
+            self.min_heapify(i)
+
+    def extractMin(self):
+        self.heap[0] = self.heap[len(self.heap) - 1]
+        #self.cur_size -= 1
+        self.min_heapify(0)
+        self.heap = self.heap[:len(self.heap) - 1]
         
     def getMin(self):
         return self.heap[0]
 
-    #def min_heapify(self, i):
 
 def main():
     heapObj = MinHeap()
@@ -39,9 +65,11 @@ def main():
     heapObj.insertKey(5)
     heapObj.insertKey(4)
     heapObj.insertKey(45)
-  
-    #print(heapObj.extractMin())
+    heapObj.build_minHeap()
+    
     print(heapObj.getMin())
+    print(heapObj.heap)
+    heapObj.extractMin()
     print(heapObj.heap)
 
 if __name__ == '__main__':
