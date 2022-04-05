@@ -57,13 +57,27 @@ Yes
 
 
 
+## Quicksort
+Quicksort is a sorting algorithm that is based on Divide and Conquer Algorithm. An array is divided into subarrays by selecting pivot element. While dividing the array, elements less than pivot are kept on the left side of pivot and elements greater than the pivot are kept on the right side of pivot. This process continues until each subarray contains a single element.
+
+### Time complexity
+Average O(n*logn) Worst O(n^2)
+### Space complexity
+O(log n)
+### Stability
+No
 
 
+
+## Heap sort
 
 
 ### Time complexity
+O(n*logn)
 ### Space complexity
+O(1)
 ### Stability
+No
 
 
 # URL
